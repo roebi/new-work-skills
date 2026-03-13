@@ -65,16 +65,16 @@ Works best in combination with aider or Claude Code as the executing agent.
 ## Migration Steps
 
 ### Step 1 — Update the Gradle Wrapper
-```bash
+~~~bash
 ./gradlew wrapper --gradle-version 9.0.0
 ./gradlew wrapper  # apply
-```
+~~~
 
 ### Step 2 — Fix Deprecated APIs
 Run the build with `--warning-mode all` and address each warning:
-```bash
+~~~bash
 ./gradlew build --warning-mode all
-```
+~~~
 See [references/breaking-changes.md](references/breaking-changes.md) for
 common Gradle 8 → 9 breaking changes and their fixes.
 
@@ -82,10 +82,10 @@ common Gradle 8 → 9 breaking changes and their fixes.
 Replace legacy `apply plugin:` syntax with the `plugins {}` block.
 
 ### Step 4 — Validate
-```bash
+~~~bash
 ./gradlew clean build
 ./gradlew test
-```
+~~~
 All tests must pass before the migration is considered complete.
 
 ## Multi-Repo Strategy
@@ -126,20 +126,20 @@ If `--warning-mode all` shows deprecations originating from a plugin
 (not your own build code), the fix strategy is different:
 
 1. **Check for a plugin update first:**
-   ```
+   ~~~
    ./gradlew dependencyUpdates
-   ```
+   ~~~
    If a newer version of the plugin exists, update it in `build.gradle`:
-   ```groovy
+   ~~~groovy
    id 'com.example.myplugin' version '2.x.x'  // update here
-   ```
+   ~~~
 
 2. **If no update is available:** suppress the warning with a comment
    and open a tracking issue:
-   ```groovy
+   ~~~groovy
    // TODO: suppress until plugin-name releases Gradle 9 support
    // Tracking: https://github.com/example/plugin/issues/123
-   ```
+   ~~~
 
 3. **Do not patch plugin internals.** If the plugin is unmaintained and
    the deprecation becomes a build error in Gradle 9, consider replacing
@@ -167,7 +167,7 @@ If `--warning-mode all` shows deprecations originating from a plugin
 
 **Skill activated:** `new-work-with-skills-en` → Level 5a pattern applied.  
 **Role type:** Mentor + Process Guard  
-**Agent mode:** EVA (Execute, Validate, Advance)
+**Agent mode:** IPO (input – process – output)
 
 Generated skill:
 
@@ -195,8 +195,8 @@ metadata:
 
 # Code Review Mentor
 
-> This Skill IS a Role. The Agent is reduced to EVA execution:
-> Execute → Validate → Advance.
+> This Skill IS a Role. The Agent is reduced to IPO execution:
+> input – process – output
 > The Role (this Skill) mentors, safeguards, and guards the process.
 
 ## Role Definition
@@ -230,12 +230,12 @@ For each finding, classify as:
 
 For every finding, output:
 
-```
+~~~
 **[SEVERITY] — Short title**
 What is wrong: <plain language explanation>
 Why it matters: <consequence if not fixed>
 Better pattern: <concrete suggestion or code example>
-```
+~~~
 
 ## Step 4 — Advance: Gate the PR
 
@@ -253,7 +253,7 @@ At no point does this Role skip the explanation step to save time.
 Mentoring IS the work. Speed is not the goal — understanding is.
 ```
 
-**What happened here:** The Agent did not *take on* a role via a system prompt. Instead, the Role lives in a Skill — portable, versioned, composable, and reusable across any session or agent that supports the agentskills.io format. The Agent simply executed EVA: followed the Skill instructions, validated outputs at each step, and advanced only when the Skill's conditions were met.
+**What happened here:** The Agent did not *take on* a role via a system prompt. Instead, the Role lives in a Skill — portable, versioned, composable, and reusable across any session or agent that supports the agentskills.io format. The Agent simply executed IPO: followed the Skill instructions, validated outputs at each step, and advanced only when the Skill's conditions were met.
 
 ---
 
@@ -263,7 +263,7 @@ Mentoring IS the work. Speed is not the goal — understanding is.
 |--------|-------|---------|-------------|
 | Session → Skill zip | 2 | Capture | Work is never lost again |
 | Update/Extend Skill | 4 | Continuous improvement | Skill grows with real experience |
-| Skill is a Role | 5a | Role + EVA | Role is portable, versionable, composable |
+| Skill is a Role | 5a | Role + IPO | Role is portable, versionable, composable |
 
 ---
 
