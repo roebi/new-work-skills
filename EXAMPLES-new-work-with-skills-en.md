@@ -263,7 +263,7 @@ Mentoring IS the work. Speed is not the goal — understanding is.
 |--------|-------|---------|-------------|
 | Session → Skill zip | 2 | Capture | Work is never lost again |
 | Update/Extend Skill | 4 | Continuous improvement | Skill grows with real experience |
-| Skill is a Role | 5a | Role + EVA | Role is portable, versionable, composable |
+| Skill is a Role | 5a | Role + IPO | Role is portable, versionable, composable |
 
 ---
 
