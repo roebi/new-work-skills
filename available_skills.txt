@@ -1,0 +1,22 @@
+Found 3 skill(s):
+
+  agent-benefit-review-en
+    Guides a user and a chat agent through a structured monthly review
+focused on the benefits gained from using the agent. Use this skill at
+the end of each month when the user wants to reflect on value created,
+time saved, friction reduced, knowledge gained, or next improvements.
+Activate for phrases like: "monthly review", "agent benefit review",
+"did this help me", "value of the agent this month", "retrospective
+with the agent", or "end of month review".
+
+    ./skills/agent-benefit-review-en/SKILL.md
+
+  new-work-with-skills-en
+    Teaches the new thinking of how to do new work with Agent Skills. Use this skill when the user wants to understand how to organize work using skills, how to save sessions as skills, how to use skill trees, how to continuously improve skills, how to use skills as roles, how to use evolving state with skills, or how to apply test-driven thinking to skill workflows. Trigger when the user asks about new work methods, agent skills workflows, skill organization, session capture, evolving state, or skill-based role patterns.
+    ./skills/new-work-with-skills-en/SKILL.md
+
+  skill-class-model-en
+    Documents the Skill Class Model — the OO-based taxonomy that classifies every Agent Skill as one of: Role, Topic, Process, or OneStepProcess, each extending the base Skill class. Defines the v1 metadata extension fields for skill-class, crud-verb, topic, requires-role, subprocess-of, subtopic-of, and subrole-of. Use when an agent or author needs to classify a skill, assign metadata, understand the class hierarchy, or check naming conventions. Activate for phrases like: "what class is this skill", "how do I classify a skill", "skill taxonomy", "skill-class metadata", "is-a or has-a for skills", "what metadata does a Role need", or "naming convention for process skills".
+
+    ./skills/skill-class-model-en/SKILL.md
+
